@@ -68,14 +68,13 @@ As threads da aplicação chamam a API da libtslog, que encapsula a lógica de l
 Internamente, um mutex garante que apenas uma thread escreva no arquivo por vez, inserindo
 timestamp e nível de log antes da mensagem.
 
-##Fluxo simplificado:
-Thread[i] ® tslog_write() ® Mutex ® Arquivo app.log
 
 ##Teste CLI:
 Foi implementado um programa test_logging que cria múltiplas threads, cada uma registrando
 várias mensagens. O resultado no arquivo app.log mostra mensagens intercaladas corretamente,
 com timestamps e sem corrupção de linhas.
 Exemplo de saída no log:
+
 [2025-09-23 20:10:01] [INFO] Thread 0 - mensagem 0
 [2025-09-23 20:10:01] [INFO] Thread 1 - mensagem 0
 [2025-09-23 20:10:01] [INFO] Thread 2 - mensagem 0
