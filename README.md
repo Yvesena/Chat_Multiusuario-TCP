@@ -44,29 +44,34 @@ Você verá as mensagens escritas por diferentes threads, demonstrando que a bib
 
 
 
-Relatório Técnico - Etapa 1
-Objetivo da Etapa 1:
+## Relatório Técnico - Etapa 1
+##Objetivo da Etapa 1:
 
 Implementar uma biblioteca de logging thread-safe (libtslog), com API clara, capaz de registrar
 mensagens de múltiplas threads de forma concorrente e segura, garantindo exclusão mútua e
 formatação com timestamp.
 Além disso, deve-se demonstrar a arquitetura inicial do projeto, um programa de teste concorrente
 e a organização do repositório.
-Implementação:
+##Implementação:
 A biblioteca libtslog foi desenvolvida em C, com três funções principais:
 - tslog_init(path): inicializa o arquivo de log no caminho especificado.
 - tslog_write(level, fmt, ...): escreve mensagens formatadas com nível e timestamp.
 - tslog_close(): fecha o arquivo de log.
+
+  
 O acesso concorrente ao arquivo é protegido com pthread_mutex_t, garantindo exclusão mútua e
 evitando race conditions. Cada linha é flushada imediatamente, garantindo consistência em
 execuções paralelas.
-Diagrama de Arquitetura:
+
+##Diagrama de Arquitetura:
 As threads da aplicação chamam a API da libtslog, que encapsula a lógica de logging.
 Internamente, um mutex garante que apenas uma thread escreva no arquivo por vez, inserindo
 timestamp e nível de log antes da mensagem.
-Fluxo simplificado:
+
+##Fluxo simplificado:
 Thread[i] ® tslog_write() ® Mutex ® Arquivo app.log
-Teste CLI:
+
+##Teste CLI:
 Foi implementado um programa test_logging que cria múltiplas threads, cada uma registrando
 várias mensagens. O resultado no arquivo app.log mostra mensagens intercaladas corretamente,
 com timestamps e sem corrupção de linhas.
@@ -74,7 +79,9 @@ Exemplo de saída no log:
 [2025-09-23 20:10:01] [INFO] Thread 0 - mensagem 0
 [2025-09-23 20:10:01] [INFO] Thread 1 - mensagem 0
 [2025-09-23 20:10:01] [INFO] Thread 2 - mensagem 0
-Conclusão:
+
+
+##Conclusão:
 A Etapa 1 foi concluída com sucesso. A biblioteca libtslog oferece logging thread-safe, validado por
 testes com múltiplas threads. O projeto encontra-se organizado com headers, código-fonte, testes
 e diagramas, pronto para evoluir para a Etapa 2 (protótipo cliente/servidor).
