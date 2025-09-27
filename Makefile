@@ -1,22 +1,29 @@
 CC = gcc
-CFLAGS = -Wall -pthread -Iinclude   # -Iinclude diz ao compilador onde achar libtslog.h
+CFLAGS = -Wall -pthread -Iinclude
 
-# Arquivos de saída
-OBJ = libtslog/tslog.o testes/test_logging.o
+OBJ_LIB = libtslog/tslog.o
+OBJ_TEST = testes/test_logging.o
 
-all: test_logging
+all: test_logging servidor cliente
 
-# Compila a biblioteca
-libtslog/tslog.o: libtslog/tslog.c include/libtslog.h
-	$(CC) $(CFLAGS) -c libtslog/tslog.c -o libtslog/tslog.o
+# Biblioteca de logging
+$(OBJ_LIB): libtslog/tslog.c include/libtslog.h
+	$(CC) $(CFLAGS) -c libtslog/tslog.c -o $(OBJ_LIB)
 
-# Compila o programa de teste
-testes/test_logging.o: testes/test_logging.c include/libtslog.h
-	$(CC) $(CFLAGS) -c testes/test_logging.c -o testes/test_logging.o
+# Teste de logging
+$(OBJ_TEST): testes/test_logging.c include/libtslog.h
+	$(CC) $(CFLAGS) -c testes/test_logging.c -o $(OBJ_TEST)
 
-# Linka tudo e gera o executável
-test_logging: $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o test_logging
+test_logging: $(OBJ_LIB) $(OBJ_TEST)
+	$(CC) $(CFLAGS) $(OBJ_LIB) $(OBJ_TEST) -o test_logging
+
+# Servidor concorrente (futuro)
+servidor: src/servidor.c $(OBJ_LIB)
+	$(CC) $(CFLAGS) src/servidor.c $(OBJ_LIB) -o servidor
+
+# Cliente simples (futuro)
+cliente: src/cliente.c
+	$(CC) $(CFLAGS) src/cliente.c -o cliente
 
 clean:
-	rm -f libtslog/*.o testes/*.o test_logging app.log
+	rm -f libtslog/*.o testes/*.o test_logging servidor cliente app.log

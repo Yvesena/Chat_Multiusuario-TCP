@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#define N_THREADS 5
+#define N_THREADS 5 
 #define MSGS_PER_THREAD 10
 
 void* worker(void *arg) {
