@@ -16,12 +16,6 @@ Implementa um **servidor de chat em rede** com múltiplos clientes simultâneos,
 
 
 
-# Servidor_de_Chat_Multiusuario — Etapa 1
-
-## Etapa 1: Biblioteca de Logging Concorrente
-
-Esta etapa implementa uma biblioteca de logging thread-safe em C, capaz de registrar mensagens de múltiplas threads de forma segura em um arquivo de log.
-
 ### Como compilar
 
 Abra o terminal na pasta `Projeto_Chat` e execute: 
@@ -43,37 +37,44 @@ Você verá as mensagens escritas por diferentes threads, demonstrando que a bib
 
 
 
-Relatório Técnico - Etapa 1
-Objetivo da Etapa 1:
+### Servidor 
+./servidor 8080
 
-Implementar uma biblioteca de logging thread-safe (libtslog), com API clara, capaz de registrar
-mensagens de múltiplas threads de forma concorrente e segura, garantindo exclusão mútua e
-formatação com timestamp.
-Além disso, deve-se demonstrar a arquitetura inicial do projeto, um programa de teste concorrente
-e a organização do repositório.
-Implementação:
-A biblioteca libtslog foi desenvolvida em C, com três funções principais:
-- tslog_init(path): inicializa o arquivo de log no caminho especificado.
-- tslog_write(level, fmt, ...): escreve mensagens formatadas com nível e timestamp.
-- tslog_close(): fecha o arquivo de log.
-O acesso concorrente ao arquivo é protegido com pthread_mutex_t, garantindo exclusão mútua e
-evitando race conditions. Cada linha é flushada imediatamente, garantindo consistência em
-execuções paralelas.
-Diagrama de Arquitetura:
-As threads da aplicação chamam a API da libtslog, que encapsula a lógica de logging.
-Internamente, um mutex garante que apenas uma thread escreva no arquivo por vez, inserindo
-timestamp e nível de log antes da mensagem.
-Fluxo simplificado:
-Thread[i] ® tslog_write() ® Mutex ® Arquivo app.log
-Teste CLI:
-Foi implementado um programa test_logging que cria múltiplas threads, cada uma registrando
-várias mensagens. O resultado no arquivo app.log mostra mensagens intercaladas corretamente,
-com timestamps e sem corrupção de linhas.
-Exemplo de saída no log:
-[2025-09-23 20:10:01] [INFO] Thread 0 - mensagem 0
-[2025-09-23 20:10:01] [INFO] Thread 1 - mensagem 0
-[2025-09-23 20:10:01] [INFO] Thread 2 - mensagem 0
-Conclusão:
-A Etapa 1 foi concluída com sucesso. A biblioteca libtslog oferece logging thread-safe, validado por
-testes com múltiplas threads. O projeto encontra-se organizado com headers, código-fonte, testes
-e diagramas, pronto para evoluir para a Etapa 2 (protótipo cliente/servidor).
+### Clinte
+./cliente 127.0.0.1 8080
+
+
+
+### Teste para o .sh
+antes disso :chmod +x testes/test_chat.sh
+./testes/test_chat.sh
+
+### Precisa de
+sudo apt update
+sudo apt install gnome-terminal -y
+
+
+
+
+####  Etapa 1 – Biblioteca libtslog: Logging Concorrente em C
+
+Nesta fase, foi desenvolvida uma biblioteca simples e eficiente para registro de logs em ambiente multithread, chamada libtslog. A implementação foi feita em C, utilizando pthread mutex para garantir que apenas uma thread por vez possa escrever no arquivo de log, evitando assim condições de corrida (race conditions).
+
+A biblioteca possibilita que múltiplas threads gravem mensagens simultaneamente de forma segura e sincronizada.
+Para validar a robustez da solução, foi criado um programa de teste (log_test.c), que simula diversas threads concorrentes gerando e escrevendo mensagens no arquivo de log.
+
+#### Etapa 2 – Servidor de Chat TCP com Teste Automatizado
+
+Na segunda etapa, foi implementado um sistema completo de chat em rede, baseado no protocolo TCP, com foco em comunicação em tempo real e suporte a múltiplos usuários conectados simultaneamente.
+
+As principais funcionalidades incluem:
+
+Servidor multithreaded: gerencia diversas conexões de clientes de forma simultânea, atribuindo uma thread dedicada para cada usuário conectado.
+
+Broadcast de mensagens: todas as mensagens enviadas por um cliente são automaticamente retransmitidas para os demais usuários ativos.
+
+Identificação por apelidos: cada usuário pode se identificar com um nome personalizado, facilitando a comunicação.
+
+Registro de eventos com libtslog: todas as ações relevantes (como conexões, desconexões e mensagens trocadas) são registradas no log por meio da biblioteca libtslog, garantindo integridade mesmo em ambiente concorrente.
+
+Comunicação bidirecional: o sistema mantém canais distintos para envio e recebimento de mensagens, permitindo uma troca contínua e fluida entre cliente e servidor. 

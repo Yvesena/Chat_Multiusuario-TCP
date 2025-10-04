@@ -1,21 +1,23 @@
 CC = gcc
-CFLAGS = -Wall -pthread -Iinclude
+CFLAGS = -Wall -Iinclude -pthread
 
-OBJ_LIB = libtslog/tslog.o
-OBJ_TEST = testes/test_logging.o
+# Fontes
+LIBTSLOG = libtslog/tslog.c
+SERVIDOR_SRC = src/servidor.c src/main_servidor.c
+CLIENTE_SRC = src/cliente.c src/main_cliente.c
+TESTE_SRC   = testes/test_logging.c
 
-all: test_logging
+# Executáveis
+all: servidor cliente test_logging
 
-# Biblioteca de logging
-$(OBJ_LIB): libtslog/tslog.c include/libtslog.h
-	$(CC) $(CFLAGS) -c libtslog/tslog.c -o $(OBJ_LIB)
+servidor: $(SERVIDOR_SRC) $(LIBTSLOG)
+	$(CC) $(CFLAGS) -o servidor $(SERVIDOR_SRC) $(LIBTSLOG)
 
-# Teste de logging
-$(OBJ_TEST): testes/test_logging.c include/libtslog.h
-	$(CC) $(CFLAGS) -c testes/test_logging.c -o $(OBJ_TEST)
+cliente: $(CLIENTE_SRC) $(LIBTSLOG)
+	$(CC) $(CFLAGS) -o cliente $(CLIENTE_SRC) $(LIBTSLOG)
 
-test_logging: $(OBJ_LIB) $(OBJ_TEST)
-	$(CC) $(CFLAGS) $(OBJ_LIB) $(OBJ_TEST) -o test_logging
+test_logging: $(TESTE_SRC) $(LIBTSLOG)
+	$(CC) $(CFLAGS) -o test_logging $(TESTE_SRC) $(LIBTSLOG)
 
 clean:
-	rm -f libtslog/*.o testes/*.o test_logging app.log
+	rm -f servidor cliente test_logging *.o app.log

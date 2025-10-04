@@ -1,100 +1,32 @@
-[2025-09-26 20:58:26] [INFO] Thread 4 - mensagem 0
-[2025-09-26 20:58:26] [INFO] Thread 3 - mensagem 0
-[2025-09-26 20:58:26] [INFO] Thread 1 - mensagem 0
-[2025-09-26 20:58:26] [INFO] Thread 2 - mensagem 0
-[2025-09-26 20:58:26] [INFO] Thread 0 - mensagem 0
-[2025-09-26 20:58:26] [INFO] Thread 3 - mensagem 1
-[2025-09-26 20:58:26] [INFO] Thread 1 - mensagem 1
-[2025-09-26 20:58:26] [INFO] Thread 4 - mensagem 1
-[2025-09-26 20:58:26] [INFO] Thread 2 - mensagem 1
-[2025-09-26 20:58:26] [INFO] Thread 0 - mensagem 1
-[2025-09-26 20:58:26] [INFO] Thread 4 - mensagem 2
-[2025-09-26 20:58:26] [INFO] Thread 2 - mensagem 2
-[2025-09-26 20:58:26] [INFO] Thread 0 - mensagem 2
-[2025-09-26 20:58:26] [INFO] Thread 3 - mensagem 2
-[2025-09-26 20:58:26] [INFO] Thread 1 - mensagem 2
-[2025-09-26 20:58:26] [INFO] Thread 4 - mensagem 3
-[2025-09-26 20:58:26] [INFO] Thread 2 - mensagem 3
-[2025-09-26 20:58:26] [INFO] Thread 0 - mensagem 3
-[2025-09-26 20:58:26] [INFO] Thread 3 - mensagem 3
-[2025-09-26 20:58:26] [INFO] Thread 1 - mensagem 3
-[2025-09-26 20:58:26] [INFO] Thread 4 - mensagem 4
-[2025-09-26 20:58:26] [INFO] Thread 2 - mensagem 4
-[2025-09-26 20:58:26] [INFO] Thread 0 - mensagem 4
-[2025-09-26 20:58:26] [INFO] Thread 3 - mensagem 4
-[2025-09-26 20:58:26] [INFO] Thread 1 - mensagem 4
-[2025-09-26 20:58:26] [INFO] Thread 4 - mensagem 5
-[2025-09-26 20:58:26] [INFO] Thread 2 - mensagem 5
-[2025-09-26 20:58:26] [INFO] Thread 0 - mensagem 5
-[2025-09-26 20:58:26] [INFO] Thread 3 - mensagem 5
-[2025-09-26 20:58:26] [INFO] Thread 1 - mensagem 5
-[2025-09-26 20:58:26] [INFO] Thread 3 - mensagem 6
-[2025-09-26 20:58:26] [INFO] Thread 1 - mensagem 6
-[2025-09-26 20:58:26] [INFO] Thread 4 - mensagem 6
-[2025-09-26 20:58:26] [INFO] Thread 2 - mensagem 6
-[2025-09-26 20:58:26] [INFO] Thread 0 - mensagem 6
-[2025-09-26 20:58:26] [INFO] Thread 4 - mensagem 7
-[2025-09-26 20:58:26] [INFO] Thread 2 - mensagem 7
-[2025-09-26 20:58:26] [INFO] Thread 0 - mensagem 7
-[2025-09-26 20:58:26] [INFO] Thread 3 - mensagem 7
-[2025-09-26 20:58:26] [INFO] Thread 1 - mensagem 7
-[2025-09-26 20:58:26] [INFO] Thread 3 - mensagem 8
-[2025-09-26 20:58:26] [INFO] Thread 1 - mensagem 8
-[2025-09-26 20:58:26] [INFO] Thread 4 - mensagem 8
-[2025-09-26 20:58:26] [INFO] Thread 2 - mensagem 8
-[2025-09-26 20:58:26] [INFO] Thread 0 - mensagem 8
-[2025-09-26 20:58:26] [INFO] Thread 3 - mensagem 9
-[2025-09-26 20:58:26] [INFO] Thread 1 - mensagem 9
-[2025-09-26 20:58:27] [INFO] Thread 4 - mensagem 9
-[2025-09-26 20:58:27] [INFO] Thread 2 - mensagem 9
-[2025-09-26 20:58:27] [INFO] Thread 0 - mensagem 9
-[2025-09-26 21:24:27] [INFO] Thread 4 - mensagem 0
-[2025-09-26 21:24:27] [INFO] Thread 2 - mensagem 0
-[2025-09-26 21:24:27] [INFO] Thread 0 - mensagem 0
-[2025-09-26 21:24:27] [INFO] Thread 3 - mensagem 0
-[2025-09-26 21:24:27] [INFO] Thread 1 - mensagem 0
-[2025-09-26 21:24:27] [INFO] Thread 2 - mensagem 1
-[2025-09-26 21:24:27] [INFO] Thread 0 - mensagem 1
-[2025-09-26 21:24:27] [INFO] Thread 4 - mensagem 1
-[2025-09-26 21:24:27] [INFO] Thread 3 - mensagem 1
-[2025-09-26 21:24:27] [INFO] Thread 1 - mensagem 1
-[2025-09-26 21:24:27] [INFO] Thread 2 - mensagem 2
-[2025-09-26 21:24:27] [INFO] Thread 0 - mensagem 2
-[2025-09-26 21:24:27] [INFO] Thread 4 - mensagem 2
-[2025-09-26 21:24:27] [INFO] Thread 3 - mensagem 2
-[2025-09-26 21:24:27] [INFO] Thread 1 - mensagem 2
-[2025-09-26 21:24:27] [INFO] Thread 0 - mensagem 3
-[2025-09-26 21:24:27] [INFO] Thread 4 - mensagem 3
-[2025-09-26 21:24:27] [INFO] Thread 3 - mensagem 3
-[2025-09-26 21:24:27] [INFO] Thread 1 - mensagem 3
-[2025-09-26 21:24:27] [INFO] Thread 2 - mensagem 3
-[2025-09-26 21:24:27] [INFO] Thread 0 - mensagem 4
-[2025-09-26 21:24:27] [INFO] Thread 4 - mensagem 4
-[2025-09-26 21:24:27] [INFO] Thread 1 - mensagem 4
-[2025-09-26 21:24:27] [INFO] Thread 3 - mensagem 4
-[2025-09-26 21:24:27] [INFO] Thread 2 - mensagem 4
-[2025-09-26 21:24:27] [INFO] Thread 0 - mensagem 5
-[2025-09-26 21:24:27] [INFO] Thread 4 - mensagem 5
-[2025-09-26 21:24:27] [INFO] Thread 1 - mensagem 5
-[2025-09-26 21:24:27] [INFO] Thread 3 - mensagem 5
-[2025-09-26 21:24:27] [INFO] Thread 2 - mensagem 5
-[2025-09-26 21:24:27] [INFO] Thread 4 - mensagem 6
-[2025-09-26 21:24:27] [INFO] Thread 0 - mensagem 6
-[2025-09-26 21:24:27] [INFO] Thread 1 - mensagem 6
-[2025-09-26 21:24:27] [INFO] Thread 3 - mensagem 6
-[2025-09-26 21:24:27] [INFO] Thread 2 - mensagem 6
-[2025-09-26 21:24:27] [INFO] Thread 0 - mensagem 7
-[2025-09-26 21:24:27] [INFO] Thread 4 - mensagem 7
-[2025-09-26 21:24:27] [INFO] Thread 1 - mensagem 7
-[2025-09-26 21:24:27] [INFO] Thread 3 - mensagem 7
-[2025-09-26 21:24:27] [INFO] Thread 2 - mensagem 7
-[2025-09-26 21:24:27] [INFO] Thread 1 - mensagem 8
-[2025-09-26 21:24:27] [INFO] Thread 3 - mensagem 8
-[2025-09-26 21:24:27] [INFO] Thread 2 - mensagem 8
-[2025-09-26 21:24:27] [INFO] Thread 4 - mensagem 8
-[2025-09-26 21:24:27] [INFO] Thread 0 - mensagem 8
-[2025-09-26 21:24:27] [INFO] Thread 1 - mensagem 9
-[2025-09-26 21:24:27] [INFO] Thread 3 - mensagem 9
-[2025-09-26 21:24:27] [INFO] Thread 2 - mensagem 9
-[2025-09-26 21:24:27] [INFO] Thread 4 - mensagem 9
-[2025-09-26 21:24:27] [INFO] Thread 0 - mensagem 9
+[2025-10-03 23:08:15] [INFO] Servidor iniciado na porta 8080
+[2025-10-03 23:08:18] [INFO] Conectado ao servidor 127.0.0.1:8080
+[2025-10-03 23:08:18] [INFO] Novo cliente conectado (socket 5)
+[2025-10-03 23:08:18] [INFO] Cliente 5 adicionado à lista
+[2025-10-03 23:08:19] [INFO] Conectado ao servidor 127.0.0.1:8080
+[2025-10-03 23:08:19] [INFO] Novo cliente conectado (socket 6)
+[2025-10-03 23:08:19] [INFO] Cliente 6 adicionado à lista
+[2025-10-03 23:08:20] [WARN] Conexão rejeitada: limite de 2 clientes atingido
+[2025-10-03 23:08:20] [INFO] Conectado ao servidor 127.0.0.1:8080
+[2025-10-03 23:08:20] [WARN] Conexão rejeitada pelo servidor (lotado)
+[2025-10-03 23:08:20] [INFO] Conexão fechada
+[2025-10-03 23:08:20] [Cliente 3] ❌ Servidor cheio. Tente novamente mais tarde.
+[2025-10-03 23:08:21] [WARN] Conexão rejeitada: limite de 2 clientes atingido
+[2025-10-03 23:08:21] [INFO] Conectado ao servidor 127.0.0.1:8080
+[2025-10-03 23:08:21] [WARN] Conexão rejeitada pelo servidor (lotado)
+[2025-10-03 23:08:21] [INFO] Conexão fechada
+[2025-10-03 23:08:21] [Cliente 4] ❌ Servidor cheio. Tente novamente mais tarde.
+[2025-10-03 23:08:22] [WARN] Conexão rejeitada: limite de 2 clientes atingido
+[2025-10-03 23:08:22] [INFO] Conectado ao servidor 127.0.0.1:8080
+[2025-10-03 23:08:22] [WARN] Conexão rejeitada pelo servidor (lotado)
+[2025-10-03 23:08:22] [INFO] Conexão fechada
+[2025-10-03 23:08:22] [Cliente 5] ❌ Servidor cheio. Tente novamente mais tarde.
+[2025-10-03 23:08:23] [WARN] Conexão encerrada pelo servidor
+[2025-10-03 23:08:23] [WARN] Conexão encerrada pelo servidor
+[2025-10-03 23:23:18] [INFO] Conexão fechada
+[2025-10-03 23:23:18] [Cliente 1] Digite mensagens (CTRL+C para sair):
+[2025-10-03 23:23:18] [Cliente 1] > 
+[2025-10-03 23:23:18] [Cliente 1] ⚠️  Conexão com o servidor foi encerrada.
+[2025-10-03 23:23:18] [INFO] Conexão fechada
+[2025-10-03 23:23:18] [Cliente 2] Digite mensagens (CTRL+C para sair):
+[2025-10-03 23:23:18] [Cliente 2] > 
+[2025-10-03 23:23:18] [Cliente 2] ⚠️  Conexão com o servidor foi encerrada.
