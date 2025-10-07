@@ -8,14 +8,20 @@
 #include <arpa/inet.h>
 #include <pthread.h>
 
-#define MAX_CLIENTES 2
+#define MAX_CLIENTES 4
 #define MAX_MSG 1024
-
+#define NAME_LEN 32 // novo
 // Lista global de clientes conectados
-int clientes[MAX_CLIENTES];
+typedef struct {
+    int sock;
+    char name[NAME_LEN];
+} ClientInfo;
+
+ClientInfo clientes[MAX_CLIENTES];
 int num_clientes = 0;
 pthread_mutex_t mutex_clientes = PTHREAD_MUTEX_INITIALIZER;
 
+int contador_clientes = 0;
 /* Inicializa o servidor */
 int servidor_init(Servidor *srv, int porta) {
     if (!srv) return -1;
@@ -52,40 +58,43 @@ int servidor_init(Servidor *srv, int porta) {
 }
 
 /* Adiciona cliente à lista */
-void adicionar_cliente(int sock) {
+void adicionar_cliente(int sock, const char *nome_base) {
     pthread_mutex_lock(&mutex_clientes);
     if (num_clientes < MAX_CLIENTES) {
-        clientes[num_clientes++] = sock;
-        tslog_write("INFO", "Cliente %d adicionado à lista", sock);
-    } else {
-        tslog_write("WARN", "Número máximo de clientes atingido");
-        close(sock);
+        snprintf(clientes[num_clientes].name, NAME_LEN, "Cliente_%d", ++contador_clientes);
+        clientes[num_clientes].sock = sock;
+        num_clientes++;
+        tslog_write("INFO", "Novo cliente adicionado: %s (socket %d)", clientes[num_clientes - 1].name, sock);
     }
     pthread_mutex_unlock(&mutex_clientes);
 }
 
 /* Remove cliente da lista */
-void remover_cliente(int sock) {
+void remover_cliente(int sock) {//novo
     pthread_mutex_lock(&mutex_clientes);
     for (int i = 0; i < num_clientes; i++) {
-        if (clientes[i] == sock) {
-            clientes[i] = clientes[num_clientes - 1]; // substitui pelo último
+        if (clientes[i].sock == sock) {
+            tslog_write("INFO", "removendo cliente %s (socket %d)", clientes[i].name, sock);
+            clientes[i] = clientes[num_clientes - 1];
             num_clientes--;
             break;
         }
     }
     pthread_mutex_unlock(&mutex_clientes);
-    tslog_write("INFO", "Cliente %d removido da lista", sock);
 }
 
 /* Envia mensagem a todos os clientes (menos o remetente) */
-void broadcast(int remetente, const char *msg, int len) {
+void broadcast(int remetente_sock, const char *msg, int len) {
+
     pthread_mutex_lock(&mutex_clientes);
+    int enviados = 0;
     for (int i = 0; i < num_clientes; i++) {
-        if (clientes[i] != remetente) {
-            send(clientes[i], msg, len, 0);
+        if (clientes[i].sock != remetente_sock) {
+            send(clientes[i].sock, msg, len, 0);
+            enviados++;
         }
     }
+    tslog_write("INFO", "Mensagem enviada para %d cliente(s) (remetente sock %d)", enviados, remetente_sock);
     pthread_mutex_unlock(&mutex_clientes);
 }
 
@@ -95,26 +104,70 @@ void* servidor_tratar_cliente(void *arg) {
     free(arg);
 
     char buffer[MAX_MSG];
-    tslog_write("INFO", "Novo cliente conectado (socket %d)", sock);
+    char nome_cliente[NAME_LEN] = "";
 
-    adicionar_cliente(sock);
+    // 🔹 Identificação automática do cliente
+    pthread_mutex_lock(&mutex_clientes);
+    if (num_clientes < MAX_CLIENTES) {
+        snprintf(clientes[num_clientes].name, NAME_LEN, "Cliente_%d", ++contador_clientes);
+        clientes[num_clientes].sock = sock;
+        strcpy(nome_cliente, clientes[num_clientes].name);
+        num_clientes++;
+        tslog_write("INFO", "Novo cliente conectado: %s (socket %d)", nome_cliente, sock);
+    } else {
+        tslog_write("WARN", "Conexão rejeitada: máximo de %d clientes atingido", MAX_CLIENTES);
+        pthread_mutex_unlock(&mutex_clientes);
+        close(sock);
+        return NULL;
+    }
+    pthread_mutex_unlock(&mutex_clientes);
 
+    // 🔹 Envia mensagem de boas-vindas para o cliente
+    char msg_boas_vindas[64];
+    snprintf(msg_boas_vindas, sizeof(msg_boas_vindas), "Bem-vindo, %s!\n", nome_cliente);
+    send(sock, msg_boas_vindas, strlen(msg_boas_vindas), 0);
+
+    // 🔹 Notifica o servidor
+    printf("[Servidor]: %s entrou no chat.\n", nome_cliente);
+    tslog_write("INFO", "%s entrou no chat.", nome_cliente);
+
+    // 🔹 Loop principal de recepção de mensagens
     while (1) {
-        int n = recv(sock, buffer, sizeof(buffer)-1, 0);
+        int n = recv(sock, buffer, sizeof(buffer) - 1, 0);
         if (n <= 0) break;
-
         buffer[n] = '\0';
-        tslog_write("INFO", "Recebido do cliente %d: %s", sock, buffer);
 
-        // Broadcast para todos os outros clientes
-        broadcast(sock, buffer, n);
+        // Ignora mensagens vazias
+        if (strlen(buffer) == 0) continue;
+
+        // 🔹 Monta mensagem final com identificação
+        char mensagem_final[MAX_MSG + NAME_LEN + 8];
+        snprintf(mensagem_final, sizeof(mensagem_final), "[%s]: %s", nome_cliente, buffer);
+
+        tslog_write("INFO", "Recebido de %s (socket %d): %s", nome_cliente, sock, buffer);
+
+        // 🔹 Envia para os outros clientes
+        broadcast(sock, mensagem_final, strlen(mensagem_final));
     }
 
+    // 🔹 Cliente saiu
     close(sock);
-    remover_cliente(sock);
-    tslog_write("INFO", "Cliente desconectado (socket %d)", sock);
+    pthread_mutex_lock(&mutex_clientes);
+    for (int i = 0; i < num_clientes; i++) {
+        if (clientes[i].sock == sock) {
+            tslog_write("INFO", "Cliente desconectado: %s (socket %d)", clientes[i].name, sock);
+            printf("[Servidor]: %s saiu do chat.\n", clientes[i].name);
+            clientes[i] = clientes[num_clientes - 1];
+            num_clientes--;
+            break;
+        }
+    }
+    pthread_mutex_unlock(&mutex_clientes);
+
     return NULL;
 }
+
+
 
 /* Loop principal: aceita conexões e cria threads */
 int servidor_executar(Servidor *srv) {
@@ -149,6 +202,7 @@ int servidor_executar(Servidor *srv) {
         // Se ainda há vagas, cria uma thread para o cliente
         pthread_t th;
         if (pthread_create(&th, NULL, servidor_tratar_cliente, novo_sock) == 0) {
+            printf("[SERVIDOR] Thread criada para cliente %d\n", num_clientes);
             pthread_detach(th);
         } else {
             perror("Erro ao criar thread");

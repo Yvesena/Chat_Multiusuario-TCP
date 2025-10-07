@@ -1,32 +1,198 @@
-[2025-10-03 23:08:15] [INFO] Servidor iniciado na porta 8080
-[2025-10-03 23:08:18] [INFO] Conectado ao servidor 127.0.0.1:8080
-[2025-10-03 23:08:18] [INFO] Novo cliente conectado (socket 5)
-[2025-10-03 23:08:18] [INFO] Cliente 5 adicionado à lista
-[2025-10-03 23:08:19] [INFO] Conectado ao servidor 127.0.0.1:8080
-[2025-10-03 23:08:19] [INFO] Novo cliente conectado (socket 6)
-[2025-10-03 23:08:19] [INFO] Cliente 6 adicionado à lista
-[2025-10-03 23:08:20] [WARN] Conexão rejeitada: limite de 2 clientes atingido
-[2025-10-03 23:08:20] [INFO] Conectado ao servidor 127.0.0.1:8080
-[2025-10-03 23:08:20] [WARN] Conexão rejeitada pelo servidor (lotado)
-[2025-10-03 23:08:20] [INFO] Conexão fechada
-[2025-10-03 23:08:20] [Cliente 3] ❌ Servidor cheio. Tente novamente mais tarde.
-[2025-10-03 23:08:21] [WARN] Conexão rejeitada: limite de 2 clientes atingido
-[2025-10-03 23:08:21] [INFO] Conectado ao servidor 127.0.0.1:8080
-[2025-10-03 23:08:21] [WARN] Conexão rejeitada pelo servidor (lotado)
-[2025-10-03 23:08:21] [INFO] Conexão fechada
-[2025-10-03 23:08:21] [Cliente 4] ❌ Servidor cheio. Tente novamente mais tarde.
-[2025-10-03 23:08:22] [WARN] Conexão rejeitada: limite de 2 clientes atingido
-[2025-10-03 23:08:22] [INFO] Conectado ao servidor 127.0.0.1:8080
-[2025-10-03 23:08:22] [WARN] Conexão rejeitada pelo servidor (lotado)
-[2025-10-03 23:08:22] [INFO] Conexão fechada
-[2025-10-03 23:08:22] [Cliente 5] ❌ Servidor cheio. Tente novamente mais tarde.
-[2025-10-03 23:08:23] [WARN] Conexão encerrada pelo servidor
-[2025-10-03 23:08:23] [WARN] Conexão encerrada pelo servidor
-[2025-10-03 23:23:18] [INFO] Conexão fechada
-[2025-10-03 23:23:18] [Cliente 1] Digite mensagens (CTRL+C para sair):
-[2025-10-03 23:23:18] [Cliente 1] > 
-[2025-10-03 23:23:18] [Cliente 1] ⚠️  Conexão com o servidor foi encerrada.
-[2025-10-03 23:23:18] [INFO] Conexão fechada
-[2025-10-03 23:23:18] [Cliente 2] Digite mensagens (CTRL+C para sair):
-[2025-10-03 23:23:18] [Cliente 2] > 
-[2025-10-03 23:23:18] [Cliente 2] ⚠️  Conexão com o servidor foi encerrada.
+[2025-10-06 23:17:16] [INFO] Servidor iniciado na porta 8080
+[2025-10-06 23:17:19] [INFO] Conectado ao servidor 127.0.0.1:8080
+[2025-10-06 23:17:19] [INFO] Mensagem enviada: ID:Cliente 1
+
+[2025-10-06 23:17:19] [INFO] Novo cliente conectado: Cliente_1 (socket 5)
+[2025-10-06 23:17:19] [INFO] Cliente_1 entrou no chat.
+[2025-10-06 23:17:19] [INFO] Recebido de Cliente_1 (socket 5): ID:Cliente 1
+
+[2025-10-06 23:17:19] [INFO] Mensagem enviada para 0 cliente(s) (remetente sock 5)
+[2025-10-06 23:17:19] [INFO] Mensagem recebida: Bem-vindo, Cliente_1!
+
+[2025-10-06 23:17:20] [Cliente 1] Digite mensagens (CTRL+C para sair):
+[2025-10-06 23:17:20] [Cliente 1] > 
+[2025-10-06 23:17:20] [Cliente 1] [Servidor]: Bem-vindo, Cliente_1!
+[2025-10-06 23:17:20] [Cliente 1] 
+[2025-10-06 23:17:20] [INFO] Mensagem enviada: olá, eu sou o cliente 1
+[2025-10-06 23:17:20] [INFO] Recebido de Cliente_1 (socket 5): olá, eu sou o cliente 1
+[2025-10-06 23:17:20] [INFO] Mensagem enviada para 0 cliente(s) (remetente sock 5)
+[2025-10-06 23:17:21] [INFO] Novo cliente conectado: Cliente_2 (socket 6)
+[2025-10-06 23:17:21] [INFO] Cliente_2 entrou no chat.
+[2025-10-06 23:17:21] [INFO] Conectado ao servidor 127.0.0.1:8080
+[2025-10-06 23:17:21] [INFO] Mensagem enviada: ID:Cliente 2
+
+[2025-10-06 23:17:21] [INFO] Mensagem recebida: em-vindo, Cliente_2!
+
+[2025-10-06 23:17:21] [INFO] Recebido de Cliente_2 (socket 6): ID:Cliente 2
+
+[2025-10-06 23:17:21] [INFO] Mensagem enviada para 1 cliente(s) (remetente sock 6)
+[2025-10-06 23:17:21] [INFO] Mensagem recebida: [Cliente_2]: ID:Cliente 2
+
+[2025-10-06 23:17:21] [Cliente 2] Digite mensagens (CTRL+C para sair):
+[2025-10-06 23:17:21] [Cliente 1] > > 
+[2025-10-06 23:17:21] [Cliente 2] > 
+[2025-10-06 23:17:21] [Cliente 2] [Servidor]: em-vindo, Cliente_2!
+[2025-10-06 23:17:21] [Cliente 2] 
+[2025-10-06 23:17:21] [Cliente 1] [Servidor]: [Cliente_2]: ID:Cliente 2
+[2025-10-06 23:17:21] [Cliente 1] 
+[2025-10-06 23:17:21] [INFO] Mensagem enviada: tudo bem com o servidor?
+[2025-10-06 23:17:21] [INFO] Recebido de Cliente_1 (socket 5): tudo bem com o servidor?
+[2025-10-06 23:17:21] [INFO] Mensagem enviada para 1 cliente(s) (remetente sock 5)
+[2025-10-06 23:17:21] [INFO] Mensagem recebida: [Cliente_1]: tudo bem com o servidor?
+[2025-10-06 23:17:22] [Cliente 2] > 
+[2025-10-06 23:17:22] [Cliente 2] [Servidor]: [Cliente_1]: tudo bem com o servidor?
+[2025-10-06 23:17:22] [INFO] Mensagem enviada: olá, eu sou o cliente 2
+[2025-10-06 23:17:22] [INFO] Recebido de Cliente_2 (socket 6): olá, eu sou o cliente 2
+[2025-10-06 23:17:22] [INFO] Mensagem enviada para 1 cliente(s) (remetente sock 6)
+[2025-10-06 23:17:22] [INFO] Mensagem recebida: [Cliente_2]: olá, eu sou o cliente 2
+[2025-10-06 23:17:22] [INFO] Conectado ao servidor 127.0.0.1:8080
+[2025-10-06 23:17:22] [INFO] Mensagem enviada: ID:Cliente 3
+
+[2025-10-06 23:17:22] [Cliente 1] > > 
+[2025-10-06 23:17:22] [Cliente 1] [Servidor]: [Cliente_2]: olá, eu sou o cliente 2
+[2025-10-06 23:17:22] [INFO] Novo cliente conectado: Cliente_3 (socket 7)
+[2025-10-06 23:17:22] [INFO] Mensagem recebida: Bem-vindo, Cliente_3!
+
+[2025-10-06 23:17:22] [INFO] Cliente_3 entrou no chat.
+[2025-10-06 23:17:22] [INFO] Recebido de Cliente_3 (socket 7): ID:Cliente 3
+
+[2025-10-06 23:17:22] [INFO] Mensagem recebida: [Cliente_3]: ID:Cliente 3
+
+[2025-10-06 23:17:22] [INFO] Mensagem recebida: [Cliente_3]: ID:Cliente 3
+
+[2025-10-06 23:17:22] [Cliente 3] Digite mensagens (CTRL+C para sair):
+[2025-10-06 23:17:22] [Cliente 3] > 
+[2025-10-06 23:17:22] [Cliente 1] > 
+[2025-10-06 23:17:22] [INFO] Mensagem enviada para 2 cliente(s) (remetente sock 7)
+[2025-10-06 23:17:22] [Cliente 2] > > 
+[2025-10-06 23:17:22] [Cliente 2] [Servidor]: [Cliente_3]: ID:Cliente 3
+[2025-10-06 23:17:22] [Cliente 1] [Servidor]: [Cliente_3]: ID:Cliente 3
+[2025-10-06 23:17:22] [Cliente 1] 
+[2025-10-06 23:17:22] [Cliente 2] 
+[2025-10-06 23:17:22] [Cliente 3] [Servidor]: Bem-vindo, Cliente_3!
+[2025-10-06 23:17:22] [Cliente 3] 
+[2025-10-06 23:17:23] [INFO] Mensagem enviada: olá, eu sou o cliente 3
+[2025-10-06 23:17:23] [INFO] Recebido de Cliente_3 (socket 7): olá, eu sou o cliente 3
+[2025-10-06 23:17:23] [INFO] Mensagem enviada para 2 cliente(s) (remetente sock 7)
+[2025-10-06 23:17:23] [INFO] Mensagem recebida: [Cliente_3]: olá, eu sou o cliente 3
+[2025-10-06 23:17:23] [INFO] Mensagem recebida: [Cliente_3]: olá, eu sou o cliente 3
+[2025-10-06 23:17:23] [INFO] Mensagem enviada: tudo bem com o servidor?
+[2025-10-06 23:17:23] [INFO] Recebido de Cliente_2 (socket 6): tudo bem com o servidor?
+[2025-10-06 23:17:23] [INFO] Mensagem enviada para 2 cliente(s) (remetente sock 6)
+[2025-10-06 23:17:23] [INFO] Mensagem recebida: [Cliente_2]: tudo bem com o servidor?
+[2025-10-06 23:17:23] [INFO] Mensagem recebida: [Cliente_2]: tudo bem com o servidor?
+[2025-10-06 23:17:23] [Cliente 1] > 
+[2025-10-06 23:17:23] [Cliente 2] > 
+[2025-10-06 23:17:23] [Cliente 1] [Servidor]: [Cliente_3]: olá, eu sou o cliente 3
+[2025-10-06 23:17:23] [Cliente 3] > > 
+[2025-10-06 23:17:23] [Cliente 2] [Servidor]: [Cliente_3]: olá, eu sou o cliente 3
+[2025-10-06 23:17:23] [Cliente 3] [Servidor]: [Cliente_2]: tudo bem com o servidor?
+[2025-10-06 23:17:23] [Cliente 1] > 
+[2025-10-06 23:17:23] [Cliente 1] [Servidor]: [Cliente_2]: tudo bem com o servidor?
+[2025-10-06 23:17:23] [INFO] Conectado ao servidor 127.0.0.1:8080
+[2025-10-06 23:17:23] [INFO] Novo cliente conectado: Cliente_4 (socket 8)
+[2025-10-06 23:17:23] [INFO] Mensagem enviada: ID:Cliente 4
+[2025-10-06 23:17:23] [INFO] Cliente_4 entrou no chat.
+[2025-10-06 23:17:23] [INFO] Recebido de Cliente_4 (socket 8): ID:Cliente 4
+
+[2025-10-06 23:17:23] [INFO] Mensagem recebida: [Cliente_4]: ID:Cliente 4
+
+[2025-10-06 23:17:23] [INFO] Mensagem recebida: [Cliente_4]: ID:Cliente 4
+
+[2025-10-06 23:17:23] [INFO] Mensagem recebida: em-vindo, Cliente_4!
+
+
+[2025-10-06 23:17:23] [INFO] Mensagem enviada para 3 cliente(s) (remetente sock 8)
+[2025-10-06 23:17:23] [INFO] Mensagem recebida: [Cliente_4]: ID:Cliente 4
+
+[2025-10-06 23:17:23] [Cliente 3] > 
+[2025-10-06 23:17:23] [Cliente 2] > > 
+[2025-10-06 23:17:23] [Cliente 3] [Servidor]: [Cliente_4]: ID:Cliente 4
+[2025-10-06 23:17:23] [Cliente 4] Digite mensagens (CTRL+C para sair):
+[2025-10-06 23:17:23] [Cliente 1] > 
+[2025-10-06 23:17:23] [Cliente 4] > 
+[2025-10-06 23:17:23] [Cliente 3] 
+[2025-10-06 23:17:23] [Cliente 1] [Servidor]: [Cliente_4]: ID:Cliente 4
+[2025-10-06 23:17:23] [Cliente 4] [Servidor]: em-vindo, Cliente_4!
+[2025-10-06 23:17:23] [Cliente 2] [Servidor]: [Cliente_4]: ID:Cliente 4
+[2025-10-06 23:17:23] [Cliente 1] 
+[2025-10-06 23:17:23] [Cliente 2] 
+[2025-10-06 23:17:23] [Cliente 4] 
+[2025-10-06 23:17:23] [INFO] Mensagem enviada: encerrando minha conexão...
+[2025-10-06 23:17:23] [INFO] Recebido de Cliente_1 (socket 5): encerrando minha conexão...
+[2025-10-06 23:17:23] [INFO] Mensagem enviada para 3 cliente(s) (remetente sock 5)
+[2025-10-06 23:17:23] [INFO] Mensagem recebida: [Cliente_1]: encerrando minha conexão...
+[2025-10-06 23:17:23] [INFO] Mensagem recebida: [Cliente_1]: encerrando minha conexão...
+[2025-10-06 23:17:23] [INFO] Mensagem recebida: [Cliente_1]: encerrando minha conexão...
+[2025-10-06 23:17:24] [Cliente 4] > 
+[2025-10-06 23:17:24] [Cliente 3] > 
+[2025-10-06 23:17:24] [Cliente 3] [Servidor]: [Cliente_1]: encerrando minha conexão...
+[2025-10-06 23:17:24] [Cliente 2] > 
+[2025-10-06 23:17:24] [Cliente 2] [Servidor]: [Cliente_1]: encerrando minha conexão...
+[2025-10-06 23:17:24] [Cliente 4] [Servidor]: [Cliente_1]: encerrando minha conexão...
+[2025-10-06 23:17:24] [INFO] Mensagem enviada: tudo bem com o servidor?
+[2025-10-06 23:17:24] [INFO] Recebido de Cliente_3 (socket 7): tudo bem com o servidor?
+[2025-10-06 23:17:24] [INFO] Mensagem enviada para 3 cliente(s) (remetente sock 7)
+[2025-10-06 23:17:24] [INFO] Mensagem recebida: [Cliente_3]: tudo bem com o servidor?
+[2025-10-06 23:17:24] [INFO] Mensagem recebida: [Cliente_3]: tudo bem com o servidor?
+[2025-10-06 23:17:24] [INFO] Mensagem recebida: [Cliente_3]: tudo bem com o servidor?
+[2025-10-06 23:17:24] [Cliente 1] > > 
+[2025-10-06 23:17:24] [Cliente 2] > 
+[2025-10-06 23:17:24] [Cliente 4] > 
+[2025-10-06 23:17:24] [Cliente 4] [Servidor]: [Cliente_3]: tudo bem com o servidor?
+[2025-10-06 23:17:24] [Cliente 1] [Servidor]: [Cliente_3]: tudo bem com o servidor?
+[2025-10-06 23:17:24] [Cliente 2] [Servidor]: [Cliente_3]: tudo bem com o servidor?
+[2025-10-06 23:17:24] [INFO] Mensagem enviada: olá, eu sou o cliente 4
+[2025-10-06 23:17:24] [INFO] Recebido de Cliente_4 (socket 8): olá, eu sou o cliente 4
+[2025-10-06 23:17:24] [INFO] Mensagem enviada para 3 cliente(s) (remetente sock 8)
+[2025-10-06 23:17:24] [INFO] Mensagem recebida: [Cliente_4]: olá, eu sou o cliente 4
+[2025-10-06 23:17:24] [INFO] Mensagem recebida: [Cliente_4]: olá, eu sou o cliente 4
+[2025-10-06 23:17:24] [INFO] Mensagem recebida: [Cliente_4]: olá, eu sou o cliente 4
+[2025-10-06 23:17:24] [WARN] Conexão rejeitada: limite de 4 clientes atingido
+[2025-10-06 23:17:24] [INFO] Conectado ao servidor 127.0.0.1:8080
+[2025-10-06 23:17:24] [INFO] Mensagem enviada: ID:Cliente 5
+
+[2025-10-06 23:17:24] [WARN] Conexão rejeitada pelo servidor (lotado)
+[2025-10-06 23:17:24] [INFO] Conexão fechada
+[2025-10-06 23:17:24] [Cliente 1] > 
+[2025-10-06 23:17:24] [Cliente 3] > > 
+[2025-10-06 23:17:24] [Cliente 5] ❌ Servidor cheio. Tente novamente mais tarde.
+[2025-10-06 23:17:24] [Cliente 2] > 
+[2025-10-06 23:17:24] [Cliente 1] [Servidor]: [Cliente_4]: olá, eu sou o cliente 4
+[2025-10-06 23:17:24] [Cliente 2] [Servidor]: [Cliente_4]: olá, eu sou o cliente 4
+[2025-10-06 23:17:24] [Cliente 3] [Servidor]: [Cliente_4]: olá, eu sou o cliente 4
+[2025-10-06 23:17:25] [INFO] Conexão fechada
+[2025-10-06 23:17:25] [INFO] Cliente desconectado: Cliente_1 (socket 5)
+[2025-10-06 23:17:25] [INFO] Mensagem enviada: encerrando minha conexão...
+[2025-10-06 23:17:25] [INFO] Recebido de Cliente_2 (socket 6): encerrando minha conexão...
+[2025-10-06 23:17:25] [INFO] Mensagem enviada para 2 cliente(s) (remetente sock 6)
+[2025-10-06 23:17:25] [INFO] Mensagem recebida: [Cliente_2]: encerrando minha conexão...
+[2025-10-06 23:17:25] [INFO] Mensagem recebida: [Cliente_2]: encerrando minha conexão...
+[2025-10-06 23:17:25] [Cliente 3] > 
+[2025-10-06 23:17:25] [Cliente 4] > > 
+[2025-10-06 23:17:25] [Cliente 3] [Servidor]: [Cliente_2]: encerrando minha conexão...
+[2025-10-06 23:17:25] [Cliente 4] [Servidor]: [Cliente_2]: encerrando minha conexão...
+[2025-10-06 23:17:26] [INFO] Mensagem enviada: encerrando minha conexão...
+[2025-10-06 23:17:26] [INFO] Recebido de Cliente_3 (socket 7): encerrando minha conexão...
+[2025-10-06 23:17:26] [INFO] Mensagem enviada para 2 cliente(s) (remetente sock 7)
+[2025-10-06 23:17:26] [INFO] Mensagem recebida: [Cliente_3]: encerrando minha conexão...
+[2025-10-06 23:17:26] [INFO] Mensagem recebida: [Cliente_3]: encerrando minha conexão...
+[2025-10-06 23:17:26] [Cliente 2] > > 
+[2025-10-06 23:17:26] [Cliente 4] > 
+[2025-10-06 23:17:26] [Cliente 2] [Servidor]: [Cliente_3]: encerrando minha conexão...
+[2025-10-06 23:17:26] [INFO] Conexão fechada
+[2025-10-06 23:17:26] [INFO] Cliente desconectado: Cliente_2 (socket 6)
+[2025-10-06 23:17:26] [Cliente 4] [Servidor]: [Cliente_3]: encerrando minha conexão...
+[2025-10-06 23:17:26] [INFO] Mensagem enviada: tudo bem com o servidor?
+[2025-10-06 23:17:26] [INFO] Recebido de Cliente_4 (socket 8): tudo bem com o servidor?
+[2025-10-06 23:17:26] [INFO] Mensagem enviada para 1 cliente(s) (remetente sock 8)
+[2025-10-06 23:17:26] [INFO] Mensagem recebida: [Cliente_4]: tudo bem com o servidor?
+[2025-10-06 23:17:26] [Cliente 3] > > 
+[2025-10-06 23:17:26] [Cliente 3] [Servidor]: [Cliente_4]: tudo bem com o servidor?
+[2025-10-06 23:17:27] [INFO] Conexão fechada
+[2025-10-06 23:17:27] [INFO] Cliente desconectado: Cliente_3 (socket 7)
+[2025-10-06 23:17:28] [INFO] Mensagem enviada: encerrando minha conexão...
+[2025-10-06 23:17:28] [INFO] Recebido de Cliente_4 (socket 8): encerrando minha conexão...
+[2025-10-06 23:17:28] [INFO] Mensagem enviada para 0 cliente(s) (remetente sock 8)
+[2025-10-06 23:17:29] [INFO] Conexão fechada
+[2025-10-06 23:17:29] [INFO] Cliente desconectado: Cliente_4 (socket 8)

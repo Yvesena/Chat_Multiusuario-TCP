@@ -35,7 +35,12 @@ int main(int argc, char *argv[]) {
 
     if (cliente_init(&cli, argv[1], atoi(argv[2])) < 0) exit(1);
     if (cliente_conectar(&cli) < 0) exit(1);
-
+    
+    if (argc >= 4) {
+    char idmsg[128];
+    snprintf(idmsg, sizeof(idmsg), "ID:%s\n", argv[3]); // mensagem de handshake
+    cliente_enviar(&cli, idmsg); // envia identificação ao servidor
+}
     // Testa se o servidor fechou imediatamente (limite atingido)
     char teste[1];
     int n = recv(cli.sock, teste, sizeof(teste), MSG_DONTWAIT);
