@@ -1,7 +1,7 @@
 
 ### ESTRUTURA
 
-'''
+```
 
 Projeto_Chat/
 │
@@ -33,5 +33,5 @@ Projeto_Chat/
 ├── LEIA-ME.md                    # Guia do projeto e instruções de execução
 └── relatorio.final.pdf           # Relatório final da Etapa 3
 
-'''
+´´´
 
