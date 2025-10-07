@@ -2,6 +2,7 @@
 ### ESTRUTURA
 
 '''
+
 Projeto_Chat/
 │
 ├── include/                      # Arquivos de cabeçalho (.h)
@@ -31,5 +32,6 @@ Projeto_Chat/
 ├── Estrutura.md                  # Documento com a descrição da estrutura do projeto
 ├── LEIA-ME.md                    # Guia do projeto e instruções de execução
 └── relatorio.final.pdf           # Relatório final da Etapa 3
+
 '''
 
