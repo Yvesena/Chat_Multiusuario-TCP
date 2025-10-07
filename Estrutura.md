@@ -1,26 +1,34 @@
-## 🏗️ Arquitetura
 
-chat-multiuser/
+### ESTRUTURA
+
+
+Projeto_Chat/
 │
-├── src/
-│ ├── main_server.c # Ponto de entrada do servidor
-│ ├── client.c # Cliente CLI oficial
-│ ├── server.c # Inicialização do socket e conexões
-│ ├── client_handler.c # Lógica da thread que atende cada cliente
-│ ├── monitor.c # Lista de clientes protegida (monitor)
-│ └── logging.c # Wrapper para libtslog
+├── include/                      # Arquivos de cabeçalho (.h)
+│   ├── cliente.h                 # Declarações das funções do cliente
+│   ├── libtslog.h                # Interface da biblioteca de logs
+│   └── servidor.h                # Declarações do servidor e threads
 │
-├── include/
-│ ├── server.h
-│ ├── client_handler.h
-│ ├── monitor.h
-│ ├── logging.h
-│ ├── common.h
-│ └── config.h
+├── libtslog/                     # Biblioteca de logs thread-safe
+│   ├── tslog.c                   # Implementação do sistema de logs
+│   └── tslog.o                   # Objeto compilado (gerado pelo Make)
 │
-├── logs/
-│ └── chat.log # Gerado automaticamente pelo libtslog
+├── src/                          # Código-fonte principal do sistema
+│   ├── cliente.c                 # Funções do cliente (envio e recepção de mensagens)
+│   ├── main_cliente.c            # Função principal do cliente
+│   ├── main_servidor.c           # Função principal do servidor
+│   └── servidor.c                # Implementação do servidor multithread
 │
-├── Makefile
-└── README.md
+├── testes/                       # Scripts e programas de teste
+│   ├── test_chat.sh              # Script automatizado de teste com múltiplos clientes
+│   ├── test_logging.c            # Teste do sistema de logs
+│   └── test_logging.o            # Objeto compilado do teste
+│
+├── app.log                       # Log geral de execução (gerado automaticamente)
+│
+├── Makefile                      # Arquivo de automação de compilação
+│
+├── Estrutura.md                  # Documento com a descrição da estrutura do projeto
+├── LEIA-ME.md                    # Guia do projeto e instruções de execução
+└── relatorio.final.pdf           # Relatório final da Etapa 3
 
